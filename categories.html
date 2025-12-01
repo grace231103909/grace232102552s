@@ -13,10 +13,21 @@
 fetch("/.netlify/functions/categories")
     .then(res => res.json())
     .then(data => {
-        let table = "<table border='1' cellpadding='8'><tr><th>ID</th><th>Name</th></tr>";
-        data.forEach(row => {
-            table += `<tr><td>${row.id}</td><td>${row.name}</td></tr>`;
+        let table = `
+            <table border='1' cellpadding='8'>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                </tr>`;
+                
+        data.forEach(item => {
+            table += `
+                <tr>
+                    <td>${item.id}</td>
+                    <td>${item.name}</td>
+                </tr>`;
         });
+
         table += "</table>";
         document.getElementById("output").innerHTML = table;
     });
