@@ -2,11 +2,11 @@ import { Client } from "pg";
 
 export default async () => {
   const client = new Client({
-    host: "YOUR_HOST",
+    host: "ep-weathered-wind-a1hoqhmi-pooler.ap-southeast-1.aws.neon.tech",
     port: 5432,
-    database: "YOUR_DBNAME",
-    user: "YOUR_USER",
-    password: "YOUR_PASSWORD",
+    database: "neondb",
+    user: "neondb_owner",
+    password: "npg_h9xJSM3RAfUw",
     ssl: { rejectUnauthorized: false }
   });
 
