@@ -18,8 +18,9 @@ fetch("/.netlify/functions/products")
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
-                    <th>Category ID</th>
-                    <th>Price</th>
+                    <th>Description</th>
+                    <th>Created</th>
+                    <th>Modified</th>
                 </tr>`;
                 
         data.forEach(item => {
@@ -27,8 +28,9 @@ fetch("/.netlify/functions/products")
                 <tr>
                     <td>${item.id}</td>
                     <td>${item.name}</td>
-                    <td>${item.category_id}</td>
-                    <td>${item.price}</td>
+                    <td>${item.description}</td>
+                    <td>${item.created}</td>
+                    <td>${item.modified}</td>
                 </tr>`;
         });
 
