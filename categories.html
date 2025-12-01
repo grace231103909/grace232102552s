@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Categories</title>
+</head>
+<body>
+
+<h2>Data Categories</h2>
+<div id="output">Loading...</div>
+<a href="products.html">Lihat Products →</a>
+
+<script>
+fetch("/.netlify/functions/categories")
+    .then(res => res.json())
+    .then(data => {
+        let table = "<table border='1' cellpadding='8'><tr><th>ID</th><th>Name</th></tr>";
+        data.forEach(row => {
+            table += `<tr><td>${row.id}</td><td>${row.name}</td></tr>`;
+        });
+        table += "</table>";
+        document.getElementById("output").innerHTML = table;
+    });
+</script>
+
+</body>
+</html>
