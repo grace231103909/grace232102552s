@@ -10,7 +10,11 @@
 <a href="categories.html">← Lihat Categories</a>
 
 <script>
-fetch("/.netlify/functions/products")
+const response = await fetch("/.netlify/functions/products");
+const data = await response.json();
+console.log("DATA:", data);
+    
+    data
     .then(res => res.json())
     .then(data => {
         let table = `
